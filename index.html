@@ -26,38 +26,42 @@
 
       <!-- Searching players section -->
       <section id="search-section">
-        <h2>Search for Players</h2>
+        <h2>NBA Player Search</h2>
         <div id="search-container">
+            <div id="form-container">
           <form id="player-search-form">
-            <label for="position-select" class="hiden">Position:</label>
-            <select id="position-select">
+            <!-- <label for="position-select" class="hiden">Position:</label> -->
+            <select id="position-select" class="form-input">
               <option value="PG">PG</option>
               <option value="SG">SG</option>
               <option value="SF">SF</option>
               <option value="PF">PF</option>
               <option value="C">C</option>
 
-              <label for="min-points" class="hiden">Minimum Points:</label>
+              <!-- <label for="min-points" class="hiden">Minimum Points:</label> -->
               <input
                 type="range"
+                class="form-input"
                 id="min-points"
                 name="min-points"
                 min="0"
                 max="20000"
               />
 
-              <label for="min-two-percent" class="hiden">Min 2PT%:</label>
+              <!-- <label for="min-two-percent" class="hiden">Min 2PT%:</label> -->
               <input
                 type="range"
+                class="form-input"
                 id="min-two-percent"
                 name="min-two-percent"
                 min="0"
                 max="100"
               />
 
-              <label for="min-three-percent" class="hiden">Min 3PT%:</label>
+              <!-- <label for="min-three-percent" class="hiden">Min 3PT%:</label> -->
               <input
                 type="range"
+                class="form-input"
                 id="min-three-percent"
                 name="min-three-percent"
                 min="0"
@@ -67,17 +71,18 @@
               <button type="submit">Search Players</button>
             </select>
           </form>
+        </div>
 
           <div id="table-container">
             <table id="player-table">
               <thead>
                 <tr>
-                  <th>Player Name</th>
+                  <th>Player</th>
                   <th>Position</th>
                   <th>Points</th>
-                  <th>2PT%</th>
-                  <th>3PT%</th>
-                  <th>Add to Team</th>
+                  <th>2P%</th>
+                  <th>3P%</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody id="player-table-body">
@@ -89,7 +94,7 @@
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
         <p>NBA Fantasy Team Manager &copy; 2024</p>
     </footer>
   </body>
