@@ -16,11 +16,26 @@
       <section id="team-section">
         <h1>My Fantasy Team</h1>
         <div id="team-container">
-          <div class="team-position">Point Guard</div>
-          <div class="team-position">Shooting Guard</div>
-          <div class="team-position">Small Forward</div>
-          <div class="team-position">PowerForward</div>
-          <div class="team-position">Center</div>
+          <div class="team-position">
+            <p class="position-titel">Point Guard</p>
+            <div class="position-detailes"></div>
+          </div>
+          <div class="team-position">
+            <p class="position-titel">Shooting Guard</p>
+            <div class="position-detailes"></div>
+          </div>
+          <div class="team-position">
+            <p class="position-titel">Small Forward</p>
+            <div class="position-detailes"></div>
+          </div>
+          <div class="team-position">
+            <p class="position-titel">PowerForward</p>
+            <div class="position-detailes"></div>
+          </div>
+          <div class="team-position">
+            <p class="position-titel">Center</p>
+            <div class="position-detailes"></div>
+          </div>
         </div>
       </section>
 
@@ -28,50 +43,59 @@
       <section id="search-section">
         <h2>NBA Player Search</h2>
         <div id="search-container">
-            <div id="form-container">
-          <form id="player-search-form">
-            <!-- <label for="position-select" class="hiden">Position:</label> -->
-            <select id="position-select" class="form-input">
-              <option value="PG">PG</option>
-              <option value="SG">SG</option>
-              <option value="SF">SF</option>
-              <option value="PF">PF</option>
-              <option value="C">C</option>
+          <div id="form-container">
+            <form id="player-search-form">
+              <!-- <label for="position-select" class="hiden">Position:</label> -->
+              <select id="position-select" class="form-input">
+                <option value="PG">PG</option>
+                <option value="SG">SG</option>
+                <option value="SF">SF</option>
+                <option value="PF">PF</option>
+                <option value="C">C</option>
+              </select>
 
-              <!-- <label for="min-points" class="hiden">Minimum Points:</label> -->
-              <input
-                type="range"
-                class="form-input"
-                id="min-points"
-                name="min-points"
-                min="0"
-                max="20000"
-              />
+              <div class="input-container">
+                <span id="min-points-value">1000</span>
+                <input
+                  type="range"
+                  class="form-input"
+                  id="min-points"
+                  name="min-points"
+                  min="0"
+                  max="20000"
+                  value="1000"
+                />
+              </div>
 
-              <!-- <label for="min-two-percent" class="hiden">Min 2PT%:</label> -->
-              <input
-                type="range"
-                class="form-input"
-                id="min-two-percent"
-                name="min-two-percent"
-                min="0"
-                max="100"
-              />
+              <div class="input-container">
+                <span id="min-two-percent-value">20</span>
+                <input
+                  type="range"
+                  class="form-input"
+                  id="min-two-percent"
+                  name="min-two-percent"
+                  min="0"
+                  max="100"
+                  value="20"
+                />
+              </div>
 
-              <!-- <label for="min-three-percent" class="hiden">Min 3PT%:</label> -->
-              <input
-                type="range"
-                class="form-input"
-                id="min-three-percent"
-                name="min-three-percent"
-                min="0"
-                max="100"
-              />
+              <div class="input-container">
+                <span id="min-three-percent-value">20</span>
+                <input
+                  type="range"
+                  class="form-input"
+                  id="min-three-percent"
+                  name="min-three-percent"
+                  min="0"
+                  max="100"
+                  value="20"
+                />
+              </div>
 
               <button type="submit">Search Players</button>
-            </select>
-          </form>
-        </div>
+            </form>
+          </div>
 
           <div id="table-container">
             <table id="player-table">
@@ -95,7 +119,9 @@
     </main>
 
     <footer>
-        <p>NBA Fantasy Team Manager &copy; 2024</p>
+      <p>NBA Fantasy Team Manager &copy; 2024</p>
     </footer>
+
+    <script src="./script/main.js"></script>
   </body>
 </html>
