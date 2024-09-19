@@ -134,6 +134,18 @@ function submitTeamToAPI() {
         }
     });
 }
+function updateRangeValue(rangeInputId, valueDisplayId) {
+    const rangeInput = document.getElementById(rangeInputId);
+    const valueDisplay = document.getElementById(valueDisplayId);
+    rangeInput.addEventListener('input', () => {
+        valueDisplay.textContent = rangeInput.value;
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    updateRangeValue('min-points', 'min-points-value');
+    updateRangeValue('min-two-percent', 'min-two-percent-value');
+    updateRangeValue('min-three-percent', 'min-three-percent-value');
+});
 const searchForm = document.getElementById('player-search-form');
 searchForm.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, function* () {
     event.preventDefault();

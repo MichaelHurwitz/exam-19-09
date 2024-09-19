@@ -151,6 +151,23 @@ function showMessage(message: string, isError: boolean = false): void {
     }
   }
   
+function updateRangeValue(rangeInputId: string, valueDisplayId: string) {
+    const rangeInput = document.getElementById(rangeInputId) as HTMLInputElement;
+    const valueDisplay = document.getElementById(valueDisplayId) as HTMLElement;
+  
+    rangeInput.addEventListener('input', () => {
+      valueDisplay.textContent = rangeInput.value;
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    updateRangeValue('min-points', 'min-points-value');
+    
+    updateRangeValue('min-two-percent', 'min-two-percent-value');
+    
+    updateRangeValue('min-three-percent', 'min-three-percent-value');
+  });
+  
   
   
   
