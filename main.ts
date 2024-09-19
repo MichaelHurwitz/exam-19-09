@@ -107,6 +107,52 @@ interface Player {
         return null;
     }
   }
+
+function showMessage(message: string, isError: boolean = false): void {
+    const messageContainer = document.getElementById('message-container') as HTMLElement;
+    
+    messageContainer.style.color = isError ? 'red' : 'green';
+    messageContainer.textContent = message;
+  
+    setTimeout(() => {
+      messageContainer.textContent = '';
+    }, 3000);
+  }
+  
+  async function submitTeamToAPI(): Promise<void> {
+    const apiUrl = 'https://nbaserver-q21u.onrender.com/api/AddTeam'; 
+    
+    const players = Object.keys(team)
+      .map(position => team[position])
+      .filter(player => player !== null) as Player[]; 
+  
+    if (players.length < 5) {
+      showMessage('Please make sure you have selected 5 players for all positions before submitting the team.', true);
+      return;
+    }
+  
+    const requestBody = JSON.stringify(players);
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: requestBody,
+      });
+  
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+  
+      showMessage('Team submitted successfully!', false);
+    } catch (error) {
+      console.error('Failed to submit team:', error);
+      showMessage('Failed to submit the team. Please try again.', true);
+    }
+  }
+  
+  
+  
   
   const searchForm = document.getElementById('player-search-form') as HTMLFormElement;
   searchForm.addEventListener('submit', async (event: Event) => {
@@ -131,4 +177,9 @@ interface Player {
       }
     }
   });
+
+  const submitTeamBtn = document.getElementById('submit-team-btn') as HTMLButtonElement;
+submitTeamBtn.addEventListener('click', () => {
+  submitTeamToAPI();
+});
   

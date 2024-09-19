@@ -86,7 +86,13 @@ body main #search-section > #search-container > #form-container > #player-search
     gap: 10px;
 }
 
-body main #search-section > #search-container > #form-container > #player-search-form > .form-input {
+body main #search-section > #search-container > #form-container > #player-search-form > .input-container, 
+body main #search-section > #search-container > #form-container > #player-search-form > #position-select {
+    font-size: 12px;
+    width: 100%;
+}
+
+body main #search-section > #search-container > #form-container > #player-search-form > .input-container > .form-input {
     width: 100%;
 }
 
