@@ -1,11 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy NBA Team Manager</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <p id="header-text">NBA FANTASY 2014-2024</p>
+    </header>
+
+    <main>
+      <!-- Displaying team section -->
+      <section id="team-section">
+        <h1>My Fantasy Team</h1>
+        <div id="team-container">
+          <div class="team-position">Point Guard</div>
+          <div class="team-position">Shooting Guard</div>
+          <div class="team-position">Small Forward</div>
+          <div class="team-position">PowerForward</div>
+          <div class="team-position">Center</div>
+        </div>
+      </section>
+
+      <!-- Searching players section -->
+      <section id="search-section">
+        <h2>Search for Players</h2>
+        <div id="search-container">
+          <form id="player-search-form">
+            <label for="position-select" class="hiden">Position:</label>
+            <select id="position-select">
+              <option value="PG">PG</option>
+              <option value="SG">SG</option>
+              <option value="SF">SF</option>
+              <option value="PF">PF</option>
+              <option value="C">C</option>
+
+              <label for="min-points" class="hiden">Minimum Points:</label>
+              <input
+                type="range"
+                id="min-points"
+                name="min-points"
+                min="0"
+                max="20000"
+              />
+
+              <label for="min-two-percent" class="hiden">Min 2PT%:</label>
+              <input
+                type="range"
+                id="min-two-percent"
+                name="min-two-percent"
+                min="0"
+                max="100"
+              />
+
+              <label for="min-three-percent" class="hiden">Min 3PT%:</label>
+              <input
+                type="range"
+                id="min-three-percent"
+                name="min-three-percent"
+                min="0"
+                max="100"
+              />
+
+              <button type="submit">Search Players</button>
+            </select>
+          </form>
+
+          <div id="table-container">
+            <table id="player-table">
+              <thead>
+                <tr>
+                  <th>Player Name</th>
+                  <th>Position</th>
+                  <th>Points</th>
+                  <th>2PT%</th>
+                  <th>3PT%</th>
+                  <th>Add to Team</th>
+                </tr>
+              </thead>
+              <tbody id="player-table-body">
+                <!-- Players will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+        <p>NBA Fantasy Team Manager &copy; 2024</p>
+    </footer>
+  </body>
 </html>
